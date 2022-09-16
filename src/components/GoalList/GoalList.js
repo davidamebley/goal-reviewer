@@ -2,14 +2,14 @@ import React from 'react'
 
 import './GoalList.css'
 
-const GoalList = () => {
+const GoalList = props => {
   return (
     <ul className='goal-list'>
-        <li>Finnish my MERN stack</li>
-        <li>Refresh on AWS</li>
-        <li>Add more projects</li>
+        {props.goals.map(goal=>{
+            return <li key={goal.id}>{goal.text}</li>
+        })}
     </ul>
-  )
-}
+  );
+};
 
 export default GoalList
